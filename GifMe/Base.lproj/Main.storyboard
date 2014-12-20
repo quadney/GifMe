@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T9P-Q0-NUc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="4gQ-9e-caN">
+            <objects>
+                <navigationController id="T9P-Q0-NUc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="klu-r2-Hhe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AX8-Cc-BdZ" kind="relationship" relationship="rootViewController" id="Rjx-Ta-3Fa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAc-Hb-Q5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-382" y="375"/>
+        </scene>
+        <!--GifMe-->
+        <scene sceneID="dGK-9W-PST">
+            <objects>
+                <viewController id="AX8-Cc-BdZ" customClass="GifMeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SdT-zf-lnn"/>
+                        <viewControllerLayoutGuide type="bottom" id="BGU-bB-9qg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gnk-Eg-Aih">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8h-ts-wr8">
+                                <rect key="frame" x="16" y="536" width="568" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5Pt-mp-Gf7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Create Gif">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createGif:" destination="AX8-Cc-BdZ" eventType="touchUpInside" id="XJs-nU-Akj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gif Duration: 1 sec" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGZ-Vm-DtQ">
+                                <rect key="frame" x="164" y="486" width="171" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="5" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="sDR-bs-FBE">
+                                <rect key="frame" x="343" y="482" width="94" height="29"/>
+                                <connections>
+                                    <action selector="durationStepper:" destination="AX8-Cc-BdZ" eventType="valueChanged" id="BSa-x7-wB8"/>
+                                </connections>
+                            </stepper>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="apu-jW-Bl2">
+                                <rect key="frame" x="16" y="72" width="568" height="397"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sDR-bs-FBE" firstAttribute="top" secondItem="apu-jW-Bl2" secondAttribute="bottom" constant="27" id="9XA-7M-deX"/>
+                            <constraint firstItem="apu-jW-Bl2" firstAttribute="trailing" secondItem="gnk-Eg-Aih" secondAttribute="trailingMargin" id="ANe-mL-Wow"/>
+                            <constraint firstItem="i8h-ts-wr8" firstAttribute="top" secondItem="yGZ-Vm-DtQ" secondAttribute="bottom" constant="29" id="AjP-xh-jYa"/>
+                            <constraint firstItem="apu-jW-Bl2" firstAttribute="top" secondItem="SdT-zf-lnn" secondAttribute="bottom" constant="8" id="BpG-gL-BKz"/>
+                            <constraint firstItem="yGZ-Vm-DtQ" firstAttribute="top" secondItem="apu-jW-Bl2" secondAttribute="bottom" constant="17" id="Glo-iJ-Le7"/>
+                            <constraint firstAttribute="centerX" secondItem="yGZ-Vm-DtQ" secondAttribute="centerX" constant="50.5" id="GxF-9L-BrS"/>
+                            <constraint firstAttribute="centerX" secondItem="apu-jW-Bl2" secondAttribute="centerX" id="IQg-Rc-ytD"/>
+                            <constraint firstItem="sDR-bs-FBE" firstAttribute="top" secondItem="apu-jW-Bl2" secondAttribute="bottom" constant="13" id="MgA-aD-XFC"/>
+                            <constraint firstItem="i8h-ts-wr8" firstAttribute="top" secondItem="sDR-bs-FBE" secondAttribute="bottom" constant="25" id="QTn-QM-Vci"/>
+                            <constraint firstItem="BGU-bB-9qg" firstAttribute="top" secondItem="i8h-ts-wr8" secondAttribute="bottom" constant="20" id="RVh-Wr-9ea"/>
+                            <constraint firstAttribute="centerX" secondItem="i8h-ts-wr8" secondAttribute="centerX" id="Sdz-6I-M4g"/>
+                            <constraint firstItem="i8h-ts-wr8" firstAttribute="trailing" secondItem="gnk-Eg-Aih" secondAttribute="trailingMargin" id="XkJ-pJ-hwG"/>
+                            <constraint firstItem="apu-jW-Bl2" firstAttribute="leading" secondItem="gnk-Eg-Aih" secondAttribute="leadingMargin" id="Yzp-C9-BZ3"/>
+                            <constraint firstItem="apu-jW-Bl2" firstAttribute="trailing" secondItem="gnk-Eg-Aih" secondAttribute="trailingMargin" id="Zet-ES-rVR"/>
+                            <constraint firstItem="apu-jW-Bl2" firstAttribute="top" secondItem="SdT-zf-lnn" secondAttribute="bottom" id="bkj-N9-6pW"/>
+                            <constraint firstItem="i8h-ts-wr8" firstAttribute="leading" secondItem="gnk-Eg-Aih" secondAttribute="leadingMargin" id="bsz-Bc-GW5"/>
+                            <constraint firstItem="apu-jW-Bl2" firstAttribute="top" secondItem="SdT-zf-lnn" secondAttribute="bottom" id="eAX-qI-rlU"/>
+                            <constraint firstItem="sDR-bs-FBE" firstAttribute="leading" secondItem="yGZ-Vm-DtQ" secondAttribute="trailing" constant="8" id="gWP-hQ-Qli"/>
+                            <constraint firstAttribute="centerY" secondItem="apu-jW-Bl2" secondAttribute="centerY" id="hQW-rA-eIH"/>
+                            <constraint firstItem="yGZ-Vm-DtQ" firstAttribute="top" secondItem="apu-jW-Bl2" secondAttribute="bottom" constant="31" id="n6n-sl-3pN"/>
+                            <constraint firstItem="BGU-bB-9qg" firstAttribute="top" secondItem="apu-jW-Bl2" secondAttribute="bottom" constant="20" id="poU-nS-qnp"/>
+                            <constraint firstAttribute="centerX" secondItem="sDR-bs-FBE" secondAttribute="centerX" constant="-90" id="r2B-pM-Ho0"/>
+                            <constraint firstItem="apu-jW-Bl2" firstAttribute="leading" secondItem="gnk-Eg-Aih" secondAttribute="leadingMargin" id="uVa-6N-yU3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ANe-mL-Wow"/>
+                                <exclude reference="IQg-Rc-ytD"/>
+                                <exclude reference="bkj-N9-6pW"/>
+                                <exclude reference="eAX-qI-rlU"/>
+                                <exclude reference="hQW-rA-eIH"/>
+                                <exclude reference="uVa-6N-yU3"/>
+                                <exclude reference="n6n-sl-3pN"/>
+                                <exclude reference="9XA-7M-deX"/>
+                                <exclude reference="poU-nS-qnp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="GifMe" id="G6V-5U-faU"/>
+                    <connections>
+                        <outlet property="durationLabel" destination="yGZ-Vm-DtQ" id="M9F-iW-Mea"/>
+                        <outlet property="imageView" destination="apu-jW-Bl2" id="ck2-me-cZ4"/>
+                        <outlet property="stepper" destination="sDR-bs-FBE" id="9vN-8M-RcS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sP-uK-W37" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
